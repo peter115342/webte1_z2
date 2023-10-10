@@ -78,8 +78,16 @@ header {
     -ms-border-radius:20px ;
     -o-border-radius:20px ;
     display: flex;
+    margin-bottom: 50px;
 }
-
+.logo{
+    margin: 0 auto;
+    position: relative;
+    padding: 15px;
+}
+.logo img{
+    height: 125px;
+}
 footer{
     padding: 5px;
     width: 100%;
@@ -92,6 +100,7 @@ footer{
     -moz-border-radius:20px ;
     -ms-border-radius:20px ;
     -o-border-radius:20px ;
+    margin-top: 50px;
 }
 
 
@@ -103,16 +112,16 @@ footer{
     margin-top: 50px;
     position: relative;
     border: var(--border);
+    display: grid;
+    grid-template-columns: 2fr 2fr;
 }
 
-.logo{
-    margin: 0 auto;
-    position: relative;
-    padding: 15px;
+.banner{
+    font-weight: bolder;
+    text-align: center;
+    padding: 20px;
 }
-.logo img{
-    height: 125px;
-}
+
 
 
 @media screen and (max-width: 850px) {
