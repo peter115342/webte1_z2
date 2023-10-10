@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
+
+:root{
+    --border: 1px solid rgb(42, 42, 42);
+    --shadow-border : 10px 20px 25px #2a2a2a;
+    --b_color: rgb(45, 49, 32);
+    --t_color :  rgb(130, 176, 77);
+ }
 body{
     font-family: "Montserrat", sans-serif;
-    background-color:rgb(200, 205, 204) ;
-    color: rgb(42, 42, 42);
+    background-color:var(--b_color);
+    color: var(--t_color);
     margin: 10px;
     padding: 10px;
     min-height: 1000px;
@@ -11,47 +18,114 @@ body{
 
 
 h1{
-    color: rgb(42, 42, 42);
+    color: var(--t_color);
     text-decoration: none;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
 }
 h2{
-    color: rgb(42, 42, 42);
+    color: var(--t_color);
     text-decoration: none;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
 }
 h3{
-    color: rgb(42, 42, 42);
+    color: var(--t_color);
+    text-decoration: none;
     text-decoration: none;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
 }
 h4{
-    color: rgb(200, 205, 204);
+    color: var(--t_color);
+    text-decoration: none;
     text-decoration: none;
     font-weight: bold;
     font-size: large;
     font-family: "Montserrat", sans-serif;
 }
 h5{
-    color: rgb(42, 42, 42);
+    color: var(--t_color);
+    text-decoration: none;
     text-decoration: none;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
 }
 
 h6{
-    color: rgb(42, 42, 42);
+    color: var(--t_color);
     text-decoration: none;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
 
 }
 a{
-    color: rgb(42, 42, 42);
+    color: var(--t_color);
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
     font-size: large;
+}
+
+header {
+    padding: 5px;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(130, 176, 77);
+    box-shadow: var(--shadow-border);
+    border-radius:20px ;
+    -webkit-border-radius:20px ;
+    -moz-border-radius:20px ;
+    -ms-border-radius:20px ;
+    -o-border-radius:20px ;
+    display: flex;
+}
+
+footer{
+    padding: 5px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: rgb(130, 176, 77);
+    box-shadow: var(--shadow-border);
+    border-radius:20px ;
+    -webkit-border-radius:20px ;
+    -moz-border-radius:20px ;
+    -ms-border-radius:20px ;
+    -o-border-radius:20px ;
+}
+
+
+.main_container{
+    width: 95%;
+    max-width: 1000px;
+    min-height: 1000px;
+    margin:0 auto;
+    margin-top: 50px;
+    position: relative;
+    border: 2px solid black;
+}
+
+.logo{
+    margin: 0 auto;
+    position: relative;
+    padding: 15px;
+}
+.logo img{
+    height: 115px;
+}
+
+
+@media screen and (max-width: 850px) {
+    body{
+        min-height: 1250px;
+    }
+    header{
+        height: auto;
+    }
+
+    .logo{
+        text-align: center;
+    }
+    .logo img{
+        height: 125px;   }
 }
