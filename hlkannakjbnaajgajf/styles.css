@@ -2,7 +2,7 @@
 
 
 :root{
-    --border: 1px solid rgb(42, 42, 42);
+    --border: 2px solid var(--t_color);
     --shadow-border : 10px 20px 25px #2a2a2a;
     --b_color: rgb(216, 215, 215);
     --t_color :rgb(0, 70, 68)  ;
@@ -113,15 +113,52 @@ footer{
     position: relative;
     border: var(--border);
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
+
+
+}
+
+.left_form{
+    position: relative;
+padding: 20px;
+}
+
+.right_form{
+    position: relative;
+    padding: 20px;
 }
 
 .banner{
     font-weight: bolder;
     text-align: center;
     padding: 20px;
+    margin:0 auto;
+    margin-bottom: 10px;
+
 }
 
+::placeholder {
+    color: rgb(95, 8, 8);
+    font-family: "Montserrat", sans-serif;
+    font-size: medium;
+  }
+
+
+.form_field{
+    position: relative;
+    margin: 0 auto;
+    height: 32px;
+    width: 75%;
+    display: block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: var(--b_color);
+    border: var(--border);
+    margin-bottom: 28px;
+}
 
 
 @media screen and (max-width: 850px) {
