@@ -4,6 +4,7 @@
 :root{
     --border: 2px solid var(--t_color);
     --shadow-border : 10px 20px 25px #2a2a2a;
+    --highlight: 4px solid rgb(9, 137, 139);
     --b_color: rgb(216, 215, 215);
     --t_color :rgb(0, 70, 68);
  }
@@ -105,22 +106,21 @@ footer{
 
 
 .main_container{
-    width: 95%;
-    max-width: 1000px;
-    min-height: 1000px;
+    width:  100%;
+    max-width: 1500px;
+    min-height: fit-content;
+    padding: 30px;
     margin:0 auto;
     margin-top: 50px;
     position: relative;
     border: var(--border);
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-
 }
 
 .left_form{
     position: relative;
-padding: 20px;
+    padding: 20px;
 }
 
 .right_form{
@@ -157,7 +157,44 @@ form input{
     -o-border-radius: 5px;
     background-color: var(--b_color);
     border: var(--border);
-    margin-bottom: 28px;
+    margin-bottom: 23px;
+}
+
+ input:hover, button:hover{
+border: var(--highlight);}
+
+form label, legend{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 75%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.gender_radio   label{
+    display: block;
+    position: relative;
+    width: 75%;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+.gender_radio{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 75%;
+}
+
+
+
+#male, #female{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    bottom: 1.75rem;;
+    padding: 10px;
 }
 
 button{
@@ -181,8 +218,6 @@ button{
     cursor: pointer;
 }
 
-
-
 @media screen and (max-width: 850px) {
     body{
         min-height: 1250px;
@@ -196,4 +231,9 @@ button{
     }
     .logo img{
         height: 125px;   }
+
+    .main_container{
+        grid-template-columns: repeat(1, 1fr);
+        min-height: 2000px;
+    }
 }

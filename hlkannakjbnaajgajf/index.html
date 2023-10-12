@@ -21,27 +21,43 @@
     <div class="left_form">
      <h2 class="banner">
         RENT A RIDE TODAY!</h2>
-        <form action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data"  >
+        <form action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data"  onsubmit="sendEmail()"  >
 
             <input type="hidden" name="apikey" value="904f5985d386ba1bcd77fd321bb324c1">
 
               <input type="hidden" name="from" value="">
               <input type="hidden" name="sender" value="">
-              <input type="hidden" name="to" value="xmuzslay@stuba.sk">
+              <input type="hidden" name="to" value="pmuzslay8@gmail.com">
               <input type="hidden" name="subject" value="Test">
-              <input type="hidden" name="redirectOk" value="https://www.google.com/">
+              <input type="hidden" name="redirectOk" value="http://127.0.0.1:5500/hlkannakjbnaajgajf/index.html">
               <input type="hidden" name="redirectFalse" value="https://www.yahoo.com/">
 
-
+        <label for="first_name">First Name</label>
         <input type="text" id="first_name" placeholder="First Name" required>
+        <label for="last_name">Last Name</label>
         <input type="text"  id="last_name" placeholder="Last Name" required>
+        <label for="email_field">E-mail Address</label>
         <input type="email" class="form_field"  id="email_field" placeholder="E-mail address" required>
+        <label for="phone_field">Phone Number</label>
         <input type="tel"  class="form_field" id="phone_field" placeholder="Phone Number" required>
+        <label for="birth_field">Date Of Birth</label>
+        <input type="date"  class="form_field" id="birth_field" placeholder="Date of Birth" required>
+        <label for="age_field">Age</label>
+        <input type="text"  class="form_field" id="age_field" placeholder="Age" required>
+        
+        <div class="gender_radio">
+        <legend>Choose your gender:</legend>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male" checked>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+    </div>
         <button type="submit"  class="submit_button"  >SUBMIT</button>
 
     </form>
     </div>
     <div class="right_form">
+
     </div>
    </div>
     <footer></footer>
@@ -50,8 +66,16 @@
         function sendEmail() {
             var name  = document.getElementById("first_name").value + " " + document.getElementById("last_name").value;
             var email = document.getElementById("email_field").value;
+            var genderElement = document.getElementsByName("gender");
+            var age = document.getElementById("age_field").value;
+            for(i = 0; i < gender.length; i++){
+                if(genderElement[i].checked){
+                    var gender = genderElement[i].value;
+                }
+            }
             document.getElementsByName("from")[0].value = email;
             document.getElementsByName("sender")[0].value = name;
+            return true;
         }
     </script>
 </body>
