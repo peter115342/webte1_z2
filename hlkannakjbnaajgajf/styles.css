@@ -2,9 +2,9 @@
 
 
 :root{
-    --border: 2px solid var(--t_color);
+    --border: 3px solid var(--t_color);
     --shadow-border : 10px 20px 25px #2a2a2a;
-    --highlight: 4px solid rgb(9, 137, 139);
+    --highlight: 5px solid rgb(9, 137, 139);
     --b_color: rgb(216, 215, 215);
     --t_color :rgb(0, 70, 68);
  }
@@ -157,7 +157,6 @@ form input{
     -o-border-radius: 5px;
     background-color: var(--b_color);
     border: var(--border);
-    margin-bottom: 23px;
 }
 
  input:hover, button:hover{
@@ -216,14 +215,19 @@ button{
     font-size: medium;
     color: rgb(95, 8, 8);
     cursor: pointer;
+    visibility: hidden;
+
 }
 
 .error_field{
     color: rgb(179, 6, 6);
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
-    margin-left: 10px;
     visibility: hidden;
+    padding: 20px;
+    margin:0 auto;
+    margin-left: 40%;
+    
 }
 
 @media screen and (max-width: 850px) {

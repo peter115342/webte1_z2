@@ -24,7 +24,7 @@
      <h2 class="banner">
         RENT A RIDE TODAY!</h2>
 
-        <form action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data"  onsubmit="fillEmail()"  novalidate>
+        <form action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data"  id="form" onsubmit="fillEmail()"  novalidate>
 
             <input type="hidden" name="apikey" value="904f5985d386ba1bcd77fd321bb324c1">
 
@@ -36,30 +36,31 @@
               <input type="hidden" name="redirectFalse" value="https://www.google.com/">
 
         <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="First Name" placeholder="First Name" required onblur="checkEmpty('first_name','first_err')">
+        <input type="text" id="first_name" name="First Name" placeholder="First Name" required onblur="checkEmpty('first_name','first_err'),checkRequiredFields('form','sub_button') ">
         <span class="error_field" id="first_err" ></span>
 
         <label for="last_name">Last Name</label>
-        <input type="text"  id="last_name" name="Last Name" placeholder="Last Name" required>
+        <input type="text"  id="last_name" name="Last Name" placeholder="Last Name" required onblur="checkEmpty('last_name','last_err')">
         <span class="error_field" id="last_err"> </span>
 
         <label for="email_field">E-mail Address</label>
-        <input type="email" class="form_field"  name="E-mail Address" id="email_field" placeholder="E-mail address" required>
+        <input type="email" class="form_field"  name="E-mail Address" id="email_field" placeholder="E-mail address" required onblur="checkEmpty('email_field','email_err')">
         <span class="error_field" id="email_err"> </span>
 
 
         <label for="phone_field">Phone Number</label>
-        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" placeholder="Phone Number" required>
+        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_err')"> 
         <span class="error_field" id="phone_err"> </span>
 
 
         <label for="birth_field">Date Of Birth</label>
-        <input type="date"  class="form_field"  name ="Date Of Birth" id="birth_field" placeholder="Date of Birth" required>
+        <input type="date"  class="form_field"  name ="Date Of Birth" id="birth_field" placeholder="Date of Birth" required onblur="checkEmpty('birth_field','date_err')">
         <span class="error_field"  id="date_err"> </span>
 
 
         <label for="age_field">Age</label>
-        <input type="number"  class="form_field" name="Age" id="age_field" placeholder="Age" >
+        <input type="text"  class="form_field" name="Age" id="age_field" placeholder="Age"  readonly onmouseenter="ageAnnotationShow('age_err')" onmouseleave="ageAnnotationHide('age_err')">
+        <span class="error_field"  id="age_err"> </span>
 
         <div class="gender_radio">
         <legend>Choose your gender:</legend>
@@ -70,7 +71,7 @@
 
         </div>
 
-        <button type="submit"  class="submit_button"  >SUBMIT</button>
+        <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
 
     </form>
     </div>
