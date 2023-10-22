@@ -7,6 +7,8 @@
     --highlight: 5px solid rgb(9, 137, 139);
     --b_color: rgb(216, 215, 215);
     --t_color :rgb(0, 70, 68);
+    --err_color : rgb(179, 6, 6);
+    --place__color :rgb(95, 8, 8);
  }
 body{
     font-family: "Montserrat", sans-serif;
@@ -106,7 +108,7 @@ footer{
 
 
 .main_container{
-    width:  100%;
+    width:  85%;
     max-width: 1500px;
     min-height: fit-content;
     padding: 30px;
@@ -116,6 +118,9 @@ footer{
     border: var(--border);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-radius:20px ;
+    box-shadow: var(--shadow-border);
+
 }
 
 .left_form{
@@ -138,7 +143,7 @@ footer{
 }
 
 ::placeholder {
-    color: rgb(95, 8, 8);
+    color: var(--place__color);
     font-family: "Montserrat", sans-serif;
     font-size: medium;
   }
@@ -159,8 +164,8 @@ form input{
     border: var(--border);
 }
 
- input:hover, button:hover{
-border: var(--highlight);}
+ button:hover{
+ border: var(--highlight);}
 
 form label, legend{
     position: relative;
@@ -213,14 +218,13 @@ button{
     font-weight:bolder ;
     font-family: "Montserrat", sans-serif;
     font-size: medium;
-    color: rgb(95, 8, 8);
+    color: var(--place__color);
     cursor: pointer;
-    visibility: hidden;
 
 }
 
 .error_field{
-    color: rgb(179, 6, 6);
+    color: var(--err_color);
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     visibility: hidden;
@@ -229,8 +233,11 @@ button{
     margin-left: 40%;
     
 }
+#age_err{
+    color: var(--t_color);
+}
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     body{
         min-height: 1250px;
     }

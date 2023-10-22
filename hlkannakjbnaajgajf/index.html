@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="images/logo_smol.png" >
-    <script src="script.js"></script>
-
     <title>EasyDrive Rentals</title>
 </head>
 
@@ -24,7 +22,7 @@
      <h2 class="banner">
         RENT A RIDE TODAY!</h2>
 
-        <form action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data"  id="form" onsubmit="fillEmail()"  novalidate>
+        <form id="main_form" action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data" onsubmit="fillEmail()" novalidate>
 
             <input type="hidden" name="apikey" value="904f5985d386ba1bcd77fd321bb324c1">
 
@@ -36,7 +34,7 @@
               <input type="hidden" name="redirectFalse" value="https://www.google.com/">
 
         <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="First Name" placeholder="First Name" required onblur="checkEmpty('first_name','first_err'),checkRequiredFields('form','sub_button') ">
+        <input type="text" id="first_name" name="First Name" placeholder="First Name" required onblur="checkEmpty('first_name','first_err')">
         <span class="error_field" id="first_err" ></span>
 
         <label for="last_name">Last Name</label>
@@ -49,7 +47,7 @@
 
 
         <label for="phone_field">Phone Number</label>
-        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_err')"> 
+        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_err')">
         <span class="error_field" id="phone_err"> </span>
 
 
@@ -72,13 +70,15 @@
         </div>
 
         <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
-
-    </form>
     </div>
     <div class="right_form">
 
     </div>
+    </form>
+   
+    
    </div>
     <footer></footer>
+    <script src="script.js"></script>
 </body>
 

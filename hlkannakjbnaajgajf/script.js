@@ -1,17 +1,23 @@
 function fillEmail() {
     var name = document.getElementById("first_name").value + " " + document.getElementById("last_name").value;
     var email = document.getElementById("email_field").value;
-    var age = document.getElementById("age_field").value;
 
     document.getElementsByName("from")[0].value = email;
     document.getElementsByName("sender")[0].value = name;
-    return true;
-}
 
+}
+  document.getElementById('main_form').onsubmit = function (e) {
+    if (!checkFields()) {
+        console.log(" submit failed");
+        e.preventDefault();
+    }
+    else{
+        console.log(" submit success");
+    }
+};
 function showError(message,errId) {
     let err = document.getElementById(errId);
     err.style.visibility = "visible";
-    
     err.innerHTML = message;
 }
 
@@ -35,7 +41,6 @@ function checkEmpty(field, errId) {
         inputField.style.borderColor = "rgb(0, 70, 68)";
         inputField.style.borderWidth = "3px";
         return 0;
-
     }
 }
     function ageAnnotationShow(errId) {
@@ -45,32 +50,43 @@ function checkEmpty(field, errId) {
         hideError(errId);
     }
 
-
-    function checkRequiredFields(formId, buttonId) {
-        const form = document.getElementById(formId);
-        const requiredFields = form.querySelectorAll('[required]');
-        for (const field of requiredFields) {
-            if (!field.value.trim()) {
-                hideSubmitButton(buttonId);
-                console.log("0");
-                return 0;
+    function checkFields() {
+        const form = document.getElementById('main_form');
+        if (form) {
+            for (let i = 0; i < form.elements.length; i++) {
+                const field = form.elements[i];
+                if (field.type === 'text' || field.type === 'email' || field.tagName === 'TEXTAREA') {
+                    if (!field.value.trim()) {
+                        return false;
+                    }
+                }
             }
+            return true;
+        } else {
+            console.error('Form not found.');
         }
-        showSubmitButton(buttonId);
-        console.log("1");
-        return 1;
-
     }
 
 
-    function showSubmitButton(buttonId){
-        let button = document.getElementById(buttonId)
-        button.visibility = "visible";
-    }
-    
-    function hideSubmitButton(buttonId){
-        let button = document.getElementById(buttonId)
-        button.visibility = "hidden";
-    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let birthDate = document.getElementById('birth_field');
+        if (birthDate) {
+            birthDate.addEventListener("change", (event) => {
+                let dateOfBirth = new Date(event.target.value);
+                let today = new Date();
+
+                let age = today.getFullYear() - dateOfBirth.getFullYear();
+                let month = today.getMonth() - dateOfBirth.getMonth();
+
+                if ( month < 0 || (month === 0 && today.getDate() < dateOfBirth.getDate())) {
+                    age -= 1;
+                }
+
+                let ageField = document.getElementById('age_field');
+                ageField.value = age;
+            });
+        }
+    });
 
 
