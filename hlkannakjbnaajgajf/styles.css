@@ -218,6 +218,14 @@ button{
     cursor: pointer;
 }
 
+.error_field{
+    color: rgb(179, 6, 6);
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+    visibility: hidden;
+}
+
 @media screen and (max-width: 850px) {
     body{
         min-height: 1250px;
