@@ -33,21 +33,21 @@
               <input type="hidden" name="redirectOk" value="http://127.0.0.1:5500/hlkannakjbnaajgajf/index.html">
               <input type="hidden" name="redirectFalse" value="https://www.google.com/">
               <div class="left_form">
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="First Name" placeholder="First Name" required onblur="checkEmpty('first_name','first_err')">
+        <label for="first_name">First Name<span id="first_name_counter" class= "counter"> 0/25</span></label>
+        <input type="text" id="first_name" name="First Name"  data-maxlength="25" placeholder="First Name" required onblur="checkEmpty('first_name','first_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="first_err" ></span>
 
-        <label for="last_name">Last Name</label>
-        <input type="text"  id="last_name" name="Last Name" placeholder="Last Name" required onblur="checkEmpty('last_name','last_err')">
+        <label for="last_name">Last Name<span id="last_name_counter" class= "counter">  0/25</span></label>
+        <input type="text"  id="last_name" name="Last Name" data-maxlength="25" placeholder="Last Name" required onblur="checkEmpty('last_name','last_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="last_err"> </span>
 
-        <label for="email_field">E-mail Address</label>
-        <input type="email" class="form_field"  name="E-mail Address" id="email_field" placeholder="E-mail address" required onblur="checkEmpty('email_field','email_err')">
+        <label for="email_field">E-mail Address<span id="email_field_counter" class= "counter">  0/40</span></label>
+        <input type="email" class="form_field"  name="E-mail Address" data-maxlength="40" id="email_field" placeholder="E-mail address" required onblur="checkEmpty('email_field','email_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="email_err"> </span>
 
 
-        <label for="phone_field">Phone Number</label>
-        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_err')">
+        <label for="phone_field">Phone Number<span id="phone_field_counter" class= "counter">  0/12</span></label>
+        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" data-maxlength="12"  placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="phone_err"> </span>
 
 
@@ -57,7 +57,7 @@
 
 
         <label for="age_field">Age</label>
-        <input type="text"  class="form_field" name="Age" id="age_field" placeholder="Age"  readonly onmouseenter="ageAnnotationShow('age_err')" onmouseleave="ageAnnotationHide('age_err')">
+        <input type="text"  class="form_field" name="Age" id="age_field" placeholder="Age" data-maxlength="3"  readonly onmouseenter="ageAnnotationShow('age_err')" onmouseleave="ageAnnotationHide('age_err')">
         <span class="error_field"  id="age_err"> </span>
 
         <div class="gender_radio">
@@ -69,7 +69,6 @@
 
         </div>
 
-        <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
     </div>
     <div class="right_form">
         <label for="type">Choose a type of car:</label>
@@ -91,6 +90,11 @@
 
         </select>
         <span class="error_field" id="plan_err" ></span>
+
+
+
+        <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
+
     </div>
     </form>
 

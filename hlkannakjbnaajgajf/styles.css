@@ -20,7 +20,6 @@ body{
     min-width: fit-content;
 }
 
-
 h1{
     color: var(--t_color);
     text-decoration: none;
@@ -107,7 +106,12 @@ footer{
     margin-top: 50px;
 }
 
-
+.counter{
+    text-align: end;
+    justify-self: end;
+     margin: 0 auto;
+    position: relative;
+}
 #main_form {
     width: 85%;
     max-width: 1500px;
@@ -250,9 +254,15 @@ button{
     .logo img{
         height: 125px;   }
 
-    .main_container{
+    #main_form{
         grid-template-columns: repeat(1, 1fr);
-        min-height: 2000px;
+
+    }
+    .right_form{
+        padding-top: 0px;
+    }
+    .left_form{
+        padding-bottom: 0px;
     }
     .error_field{
         margin-left: 30%;

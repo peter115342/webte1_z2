@@ -89,6 +89,25 @@ function checkEmpty(field, errId) {
         }
     });
 
+
+
+
+
+    function updateCharacterCount(inputElement) {
+        const maxLength = inputElement.getAttribute("data-maxlength");
+        const characterCount = inputElement.value.length;
+        const countElement = document.getElementById(inputElement.id + "_counter");
+        countElement.textContent = "   " + characterCount + "/" + maxLength;
+
+        if (characterCount > maxLength) {
+            countElement.style.color = "rgb(179, 6, 6)";
+        } else {
+            countElement.style.color = "rgb(0, 70, 68)";
+        }
+
+    }
+
+
     const typeSelect = document.getElementById("type");
     const modelSelect = document.getElementById("model");
     typeSelect.addEventListener("change", updateModels);
