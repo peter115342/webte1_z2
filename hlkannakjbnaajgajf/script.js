@@ -89,4 +89,82 @@ function checkEmpty(field, errId) {
         }
     });
 
+    const typeSelect = document.getElementById("type");
+    const modelSelect = document.getElementById("model");
+    typeSelect.addEventListener("change", updateModels);
+
+    function updateModels() {
+
+
+        modelSelect.innerHTML = "";
+
+        const selectedType = typeSelect.value;
+
+        if (selectedType === "family") {
+            const modelOptions = ["Boring Crossover", "Massive Station Wagon", "Luxury Limousine"];
+            addOptionsToSelect(modelSelect, modelOptions);
+        } else if (selectedType === "sporty") {
+            const modelOptions = ["Light and Nimble", "V10 Exotic", "Fast Executive sedan"];
+            addOptionsToSelect(modelSelect, modelOptions);
+        } else if (selectedType === "utility") {
+            const modelOptions = ["Basic Pickup", "Electric Van", "People Carrier"];
+            addOptionsToSelect(modelSelect, modelOptions);
+        }
+    }
+
+    const  planSelect= document.getElementById("plan");
+    modelSelect.addEventListener("change", updatePlans);
+    typeSelect.addEventListener("change", updatePlans);
+
+    function updatePlans() {
+
+
+        planSelect.innerHTML = "";
+
+        const selectedModel = modelSelect.value;
+
+        if (selectedModel === "Boring Crossover") {
+            const planOptions = ["Daily Commute", "Grocery Shopping", "Short Roadtrip"];
+            addOptionsToSelect(planSelect, planOptions);
+        } else if (selectedModel === "Massive Station Wagon") {
+            const planOptions = ["IKEA Haul", "Daily Commute", "Weekend Roadtrip"];
+            addOptionsToSelect(planSelect, planOptions);
+        } else if (selectedModel === "Luxury Limousine") {
+            const planOptions = ["Important Work Meeting", "Long Motorway Journey", "Wedding"];
+            addOptionsToSelect(planSelect, planOptions);
+        }
+        else if (selectedModel === "Light and Nimble") {
+            const planOptions = ["Track Day", "Mountain Roads", "Just Having Fun"];
+            addOptionsToSelect(planSelect, planOptions);
+        } else if (selectedModel === "V10 Exotic") {
+            const planOptions = ["Track Day", "Impress My Friends", "Go Very Fast and Crash"];
+            addOptionsToSelect(planSelect, planOptions);
+        } else if (selectedModel === "Fast Executive sedan") {
+            const planOptions = ["Late to Work Meeting", "Reckless Drifting", "Fun Roadtrip"];
+            addOptionsToSelect(planSelect, planOptions);
+        }
+        else if (selectedModel === "Basic Pickup") {
+            const planOptions = ["Durability Test", "Farm Work", "Off-Roading"];
+            addOptionsToSelect(planSelect, planOptions);
+        } else if (selectedModel === "Electric Van") {
+            const planOptions = ["IKEA Haul", "Moving houses", "Saving The Planet"];
+            addOptionsToSelect(planSelect, planOptions);
+        } else if (selectedModel === "People Carrier") {
+            const planOptions = ["Family Roadtrip", "Taking Kids to Football", "Grocery Shopping"];
+            addOptionsToSelect(planSelect, planOptions);
+        }
+    }
+
+    function addOptionsToSelect(select, options) {
+        for (const option of options) {
+            const optionElement = document.createElement("option");
+            optionElement.value = option;
+            optionElement.textContent = option;
+            select.appendChild(optionElement);
+        }
+    }
+
+    updateModels();
+    updatePlans();
+
 

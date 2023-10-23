@@ -17,6 +17,7 @@ body{
     margin: 10px;
     padding: 10px;
     min-height: 1000px;
+    min-width: fit-content;
 }
 
 
@@ -107,28 +108,27 @@ footer{
 }
 
 
-.main_container{
-    width:  85%;
+#main_form {
+    width: 85%;
     max-width: 1500px;
     min-height: fit-content;
     padding: 30px;
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: 50px;
     position: relative;
     border: var(--border);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius:20px ;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 20px;
     box-shadow: var(--shadow-border);
-
 }
 
-.left_form{
+.left_form {
     position: relative;
     padding: 20px;
 }
 
-.right_form{
+.right_form {
     position: relative;
     padding: 20px;
 }
@@ -136,10 +136,7 @@ footer{
 .banner{
     font-weight: bolder;
     text-align: center;
-    padding: 20px;
     margin:0 auto;
-    margin-bottom: 10px;
-
 }
 
 ::placeholder {
@@ -149,7 +146,7 @@ footer{
   }
 
 
-form input{
+form input, select{
     position: relative;
     margin: 0 auto;
     height: 32px;
@@ -231,10 +228,12 @@ button{
     padding: 20px;
     margin:0 auto;
     margin-left: 40%;
-    
+
 }
 #age_err{
     color: var(--t_color);
+    margin-left: 20%;
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -254,5 +253,13 @@ button{
     .main_container{
         grid-template-columns: repeat(1, 1fr);
         min-height: 2000px;
+    }
+    .error_field{
+        margin-left: 30%;
+
+    }
+    #age_err{
+        margin-left: 10%;
+
     }
 }

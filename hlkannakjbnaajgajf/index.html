@@ -17,11 +17,11 @@
         </a>
     </div>
     </header>
+    <h1 class="banner">
+        RENT A RIDE TODAY!</h1>
     <div class="main_container">
-    <div class="left_form">
-     <h2 class="banner">
-        RENT A RIDE TODAY!</h2>
 
+    
         <form id="main_form" action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data" onsubmit="fillEmail()" novalidate>
 
             <input type="hidden" name="apikey" value="904f5985d386ba1bcd77fd321bb324c1">
@@ -32,7 +32,7 @@
               <input type="hidden" name="subject" value="Test">
               <input type="hidden" name="redirectOk" value="http://127.0.0.1:5500/hlkannakjbnaajgajf/index.html">
               <input type="hidden" name="redirectFalse" value="https://www.google.com/">
-
+              <div class="left_form">
         <label for="first_name">First Name</label>
         <input type="text" id="first_name" name="First Name" placeholder="First Name" required onblur="checkEmpty('first_name','first_err')">
         <span class="error_field" id="first_err" ></span>
@@ -72,11 +72,29 @@
         <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
     </div>
     <div class="right_form">
+        <label for="type">Choose a type of car:</label>
+        <select id="type" name="Types">
+          <option value="family">Family/Commuter</option>
+          <option value="sporty">Sporty</option>
+          <option value="utility">Utility</option>
+        </select>
+        <span class="error_field" id="type_err" ></span>
 
+        <label for="model">Choose a model:</label>
+        <select id="model" name="Models">
+
+        </select>
+        <span class="error_field" id="model_err" ></span>
+
+        <label for="model">What are your plans:</label>
+        <select id="plan" name="plans">
+
+        </select>
+        <span class="error_field" id="plan_err" ></span>
     </div>
     </form>
-   
-    
+
+
    </div>
     <footer></footer>
     <script src="script.js"></script>
