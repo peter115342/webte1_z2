@@ -231,15 +231,24 @@ button{
     visibility: hidden;
     padding: 20px;
     margin:0 auto;
-    margin-left: 40%;
+    margin-left: 50%;
 
 }
 #age_err{
     color: var(--t_color);
-    margin-left: 20%;
+    margin-left: 10%;
 
 }
+@media screen and (max-width: 1250px) {
+    .error_field{
+        margin-left: 30%;
 
+    }
+    #age_err{
+        margin-left: 10%;
+
+    }
+ }
 @media screen and (max-width: 1000px) {
     body{
         min-height: 1250px;

@@ -52,16 +52,28 @@ function checkEmpty(field, errId) {
 
     function checkFields() {
         const form = document.getElementById('main_form');
+        let fail_flag = 0;
         if (form) {
             for (let i = 0; i < form.elements.length; i++) {
                 const field = form.elements[i];
-                if (field.type === 'text' || field.type === 'email' || field.tagName === 'TEXTAREA') {
+                if (field.type === 'text' || field.type === 'email' || field.tagName === 'TEXTAREA' || field.type === 'date' || field.type === 'tel') {
                     if (!field.value.trim()) {
-                        return false;
+                        const errorElement = document.getElementById(field.id + "_err");
+                        if (errorElement) {
+                            showError("This is a required field!", errorElement.id);
+                            field.style.borderColor = "rgb(179, 6, 6)";
+                            field.style.borderWidth = "4px";
+                        }
+                        fail_flag = 1;
                     }
                 }
             }
-            return true;
+            console.log(fail_flag);
+            if (fail_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
         } else {
             console.error('Form not found.');
         }
