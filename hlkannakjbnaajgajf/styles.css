@@ -213,7 +213,7 @@ button{
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background-color: orange;
+    background-color: rgb(255, 100, 0);
     border: var(--border);
     margin-bottom: 28px;
     font-weight:bolder ;
@@ -234,10 +234,9 @@ button{
     margin-left: 50%;
 
 }
-#age_err{
+#age_field_annotate{
     color: var(--t_color);
     margin-left: 10%;
-
 }
 @media screen and (max-width: 1250px) {
     .error_field{

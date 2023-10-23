@@ -42,13 +42,13 @@
         <input type="text"  id="last_name" name="Last Name" maxlength="25" placeholder="Last Name" required onblur="checkEmpty('last_name','last_name_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="last_name_err"> </span>
 
-        <label for="email_field">E-mail Address<span id="email_field_counter" class= "counter">  0/40</span></label>
-        <input type="email" class="form_field"  name="E-mail Address" maxlength="40" id="email_field" placeholder="E-mail address" required onblur="checkEmpty('email_field','email_field_err')" oninput="updateCharacterCount(this)">
+        <label for="email_field">E-mail Address<span id="email_field_counter" class= "counter">  0/50</span></label>
+        <input type="email" class="form_field"  name="E-mail Address" maxlength="50" id="email_field" placeholder="E-mail address" required onblur="checkEmpty('email_field','email_field_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="email_field_err"> </span>
 
 
-        <label for="phone_field">Phone Number<span id="phone_field_counter" class= "counter">  0/12</span></label>
-        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" maxlength="12"  placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_field_err')" oninput="updateCharacterCount(this)">
+        <label for="phone_field">Phone Number<span id="phone_field_counter" class= "counter">  0/13</span></label>
+        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" maxlength="13"  placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_field_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="phone_field_err"> </span>
 
 
@@ -58,8 +58,8 @@
 
 
         <label for="age_field">Age</label>
-        <input type="text"  class="form_field" name="Age" id="age_field" placeholder="Age" data-maxlength="3"  readonly onmouseenter="ageAnnotationShow('age_field_err')" onmouseleave="ageAnnotationHide('age_err')">
-        <span class="error_field"  id="age_field_err"> </span>
+        <input type="text"  class="form_field" name="Age" id="age_field" placeholder="Age" data-maxlength="3"  readonly onmouseenter="ageAnnotationShow('age_field_annotate')" onmouseleave="ageAnnotationHide('age_field_annotate')">
+        <span class="error_field"  id="age_field_annotate"> </span>
 
         <div class="gender_radio">
         <legend>Choose your gender:</legend>

@@ -112,7 +112,7 @@ function checkEmpty(field, errId) {
         countElement.textContent = "   " + characterCount + "/" + maxLength;
 
         if (characterCount >= maxLength) {
-            countElement.style.color = "rgb(179, 6, 6)";
+            countElement.style.color = "rgb(255, 85, 0)";
         } else {
             countElement.style.color = "rgb(0, 70, 68)";
         }
@@ -161,7 +161,7 @@ function checkEmpty(field, errId) {
             const planOptions = ["IKEA Haul", "Daily Commute", "Weekend Roadtrip"];
             addOptionsToSelect(planSelect, planOptions);
         } else if (selectedModel === "Luxury Limousine") {
-            const planOptions = ["Important Work Meeting", "Long Motorway Journey", "Wedding"];
+            const planOptions = ["Important Business Meeting", "Long Motorway Journey", "Wedding"];
             addOptionsToSelect(planSelect, planOptions);
         }
         else if (selectedModel === "Light and Nimble") {
