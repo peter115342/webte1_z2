@@ -234,10 +234,11 @@ button{
     font-weight:bolder ;
     font-family: "Montserrat", sans-serif;
     font-size: medium;
-    color: var(--place__color);
+    color: var(--t_color);
     cursor: pointer;
 
 }
+
 
 .error_field{
     color: var(--err_color);

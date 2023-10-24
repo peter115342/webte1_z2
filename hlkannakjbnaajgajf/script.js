@@ -113,26 +113,24 @@ function checkRegex(field, errId) {
 
 
 
-
     document.addEventListener("DOMContentLoaded", function() {
         let birthDate = document.getElementById('birth_field');
         if (birthDate) {
             birthDate.addEventListener("change", (event) => {
                 let dateOfBirth = new Date(event.target.value);
                 let today = new Date();
-
                 let age = today.getFullYear() - dateOfBirth.getFullYear();
-                let month = today.getMonth() - dateOfBirth.getMonth();
-
-                if ( month < 0 || (month === 0 && today.getDate() < dateOfBirth.getDate())) {
-                    age -= 1;
+    
+                if (dateOfBirth > today) {
+                    age = 0;
                 }
-
+    
                 let ageField = document.getElementById('age_field');
                 ageField.value = age;
             });
         }
     });
+    
 
 
 
