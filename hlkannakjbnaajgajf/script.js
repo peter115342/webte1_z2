@@ -43,28 +43,31 @@ function checkEmpty(field, errId) {
         return 0;
     }
 }
-function checkRegex(field,errId) {
+
+function checkRegex(field, errId) {
     const currField = document.getElementById(field);
     const value = currField.value;
     let regex = /^[A-Za-z]+$/;
-    if(currField.type === 'email'){
-         regex = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)*(\.[a-zA-Z]{2,})$/;
+
+    if (currField.type === 'email') {
+        regex = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)*(\.[a-zA-Z]{2,})$/;
+    } else if (currField.type === 'tel') {
+        regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
     }
-    else if(currField.type === 'tel'){
-         regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
-    }
-    if(value){
+
     if (!regex.test(value)) {
         showError("Invalid value format!", errId);
         currField.style.borderColor = "rgb(179, 6, 6)";
         currField.style.borderWidth = "4px";
+        return false;
     } else {
         hideError(errId);
         currField.style.borderColor = "";
         currField.style.borderWidth = "";
+        return true;
     }
 }
-}
+
 
     function ageAnnotationShow(errId) {
         showError("Age is determined automatically.", errId);
@@ -79,14 +82,17 @@ function checkRegex(field,errId) {
         if (form) {
             for (let i = 0; i < form.elements.length; i++) {
                 const field = form.elements[i];
-                if (field.type === 'text' || field.type === 'email' || field.tagvalue === 'TEXTAREA' || field.type === 'date' || field.type === 'tel') {
+                if (field.type === 'text' || field.type === 'email' || field.tagName === 'TEXTAREA' || field.type === 'date' || field.type === 'tel') {
+                    const errorElement = document.getElementById(field.id + "_err");
                     if (!field.value.trim()) {
-                        const errorElement = document.getElementById(field.id + "_err");
                         if (errorElement) {
                             showError("This is a required field!", errorElement.id);
                             field.style.borderColor = "rgb(179, 6, 6)";
                             field.style.borderWidth = "4px";
                         }
+                        fail_flag = 1;
+                    }
+                    else if (checkRegex(field.id, errorElement.id)) {
                         fail_flag = 1;
                     }
                 }
@@ -101,6 +107,7 @@ function checkRegex(field,errId) {
             console.error('Form not found.');
         }
     }
+
 
 
 
