@@ -35,20 +35,20 @@
 
               <div class="left_form">
         <label for="first_name">First Name<span id="first_name_counter" class= "counter"> 0/25</span></label>
-        <input type="text" id="first_name" name="First Name"  maxlength="25" placeholder="First Name" required onblur="checkEmpty('first_name','first_name_err')" oninput="updateCharacterCount(this)">
-        <span class="error_field" id="first_name_err" ></span>
+        <input type="text" id="first_name" name="First Name" maxlength="25" placeholder="First Name" required onblur="checkEmpty('first_name','first_name_err'); checkRegex('first_name','first_name_err')" oninput="updateCharacterCount(this)">
+         <span class="error_field" id="first_name_err" ></span>
 
         <label for="last_name">Last Name<span id="last_name_counter" class= "counter">  0/25</span></label>
-        <input type="text"  id="last_name" name="Last Name" maxlength="25" placeholder="Last Name" required onblur="checkEmpty('last_name','last_name_err')" oninput="updateCharacterCount(this)">
+        <input type="text"  id="last_name" name="Last Name" maxlength="25" placeholder="Last Name" required onblur="checkEmpty('last_name','last_name_err'); checkRegex('last_name','last_name_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="last_name_err"> </span>
 
         <label for="email_field">E-mail Address<span id="email_field_counter" class= "counter">  0/50</span></label>
-        <input type="email" class="form_field"  name="E-mail Address" maxlength="50" id="email_field" placeholder="E-mail address" required onblur="checkEmpty('email_field','email_field_err')" oninput="updateCharacterCount(this)">
+        <input type="email" class="form_field"  name="E-mail Address" maxlength="50" id="email_field" placeholder="E-mail address" required onblur="checkEmpty('email_field','email_field_err'); checkRegex('email_field','email_field_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="email_field_err"> </span>
 
 
         <label for="phone_field">Phone Number<span id="phone_field_counter" class= "counter">  0/13</span></label>
-        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" maxlength="13"  placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_field_err')" oninput="updateCharacterCount(this)">
+        <input type="tel"  class="form_field" name="Phone Number" id="phone_field" maxlength="13"  placeholder="Phone Number" required onblur="checkEmpty('phone_field','phone_field_err'); checkRegex('phone_field','phone_field_err')" oninput="updateCharacterCount(this)">
         <span class="error_field" id="phone_field_err"> </span>
 
 

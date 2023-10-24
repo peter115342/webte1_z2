@@ -1,9 +1,9 @@
 function fillEmail() {
-    var name = document.getElementById("first_name").value + " " + document.getElementById("last_name").value;
+    var value = document.getElementById("first_value").value + " " + document.getElementById("last_value").value;
     var email = document.getElementById("email_field").value;
 
-    document.getElementsByName("from")[0].value = email;
-    document.getElementsByName("sender")[0].value = name;
+    document.getElementsByvalue("from")[0].value = email;
+    document.getElementsByvalue("sender")[0].value = value;
 
 }
   document.getElementById('main_form').onsubmit = function (e) {
@@ -43,6 +43,29 @@ function checkEmpty(field, errId) {
         return 0;
     }
 }
+function checkRegex(field,errId) {
+    const currField = document.getElementById(field);
+    const value = currField.value;
+    let regex = /^[A-Za-z]+$/;
+    if(currField.type === 'email'){
+         regex = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)*(\.[a-zA-Z]{2,})$/;
+    }
+    else if(currField.type === 'tel'){
+         regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
+    }
+    if(value){
+    if (!regex.test(value)) {
+        showError("Invalid value format!", errId);
+        currField.style.borderColor = "rgb(179, 6, 6)";
+        currField.style.borderWidth = "4px";
+    } else {
+        hideError(errId);
+        currField.style.borderColor = "";
+        currField.style.borderWidth = "";
+    }
+}
+}
+
     function ageAnnotationShow(errId) {
         showError("Age is determined automatically.", errId);
     }
@@ -56,7 +79,7 @@ function checkEmpty(field, errId) {
         if (form) {
             for (let i = 0; i < form.elements.length; i++) {
                 const field = form.elements[i];
-                if (field.type === 'text' || field.type === 'email' || field.tagName === 'TEXTAREA' || field.type === 'date' || field.type === 'tel') {
+                if (field.type === 'text' || field.type === 'email' || field.tagvalue === 'TEXTAREA' || field.type === 'date' || field.type === 'tel') {
                     if (!field.value.trim()) {
                         const errorElement = document.getElementById(field.id + "_err");
                         if (errorElement) {
