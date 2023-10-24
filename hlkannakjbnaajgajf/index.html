@@ -91,20 +91,30 @@
         </select>
         <span class="error_field" id="plan_err" ></span>
 
-        <label for="option" id="box-label">Select a Special Service:</label><br>
+        <label for="option" id="box-label">Select a Special Service:</label>
 
-        <label for="adventure-box">Adventure Package</label>
-        <input type="checkbox" id="adventure-box" name="option" value="adventure">
-        <label for="honeymoon-box">Honeymoon Package</label>
-        <input type="checkbox" id="honeymoon-box" name="option" value="honeymoon">
-        <label for="business-box">Business Travel Package</label>
-        <input type="checkbox" id="business-box" name="option" value="business">
-
-        <label for="other-box">Other</label>
-        <input type="checkbox" id="other-box" name="option" value="other">
+        <div>
+            <label for="adventure-box">Adventure Package</label>
+            <input type="checkbox" id="adventure-box" name="options[]" value="adventure">
+        </div>
+        
+        <div>
+            <label for="honeymoon-box">Honeymoon Package</label>
+            <input type="checkbox" id="honeymoon-box" name="options[]" value="honeymoon">
+        </div>
+        
+        <div>
+            <label for="business-box">Business Travel Package</label>
+            <input type="checkbox" id="business-box" name="options[]" value="business">
+        </div>
+        
+        <div>
+            <label for="other-box">Other</label>
+            <input type="checkbox" id="other-box" name="options[]" value="other">
+        </div>
+        
 
         <div id="other-text">
-        <label for="other-option">Please specify:</label><br>
         <textarea id="other-option" name="other-option" rows="4" cols="50"></textarea>
         </div>
 

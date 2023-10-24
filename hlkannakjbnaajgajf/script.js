@@ -83,7 +83,7 @@ function checkRegex(field, errId) {
         if (form) {
             for (let i = 0; i < form.elements.length; i++) {
                 const field = form.elements[i];
-                if (field.type === 'text' || field.type === 'email' || field.tagName === 'TEXTAREA' || field.type === 'date' || field.type === 'tel') {
+                if (field.type === 'text' || field.type === 'email' || field.type === 'date' || field.type === 'tel') {
                     const errorElement = document.getElementById(field.id + "_err");
                     if (!field.value.trim()) {
                         if (errorElement) {
@@ -229,3 +229,22 @@ function checkRegex(field, errId) {
 
     updateModels();
     updatePlans();
+
+
+
+
+
+
+
+
+    const otherCheckbox = document.getElementById('other-box');
+        const otherText = document.getElementById('other-option');
+
+        otherCheckbox.addEventListener('change', function() {
+            if (otherCheckbox.checked) {
+                otherText.style.display = 'block';
+            } else {
+                otherText.style.display = 'none';
+                otherText.value = '';
+            }
+        });

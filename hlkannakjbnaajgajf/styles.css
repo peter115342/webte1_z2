@@ -7,7 +7,7 @@
     --highlight: 5px solid rgb(9, 137, 139);
     --b_color: rgb(216, 215, 215);
     --t_color :rgb(0, 70, 68);
-    --t_color-darker:rgb(0, 48, 46)8);
+    --t_color-darker:rgb(0, 48, 46);
     --err_color : rgb(179, 6, 6);
     --place__color :rgb(95, 8, 8);
  }
@@ -247,21 +247,41 @@ label[for="business-box"],
 label[for="other-box"] {
     font-weight: normal;
     color: var(--t_color-darker);
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
+    display: inline-block;
     vertical-align: middle;
-
+    margin-top: 25px;
+    margin-left: 15%;
 }
+
 input[type="checkbox"] {
-    position: relative;
-    margin: 0 auto;
+    display: inline-block;
     padding: 0;
-    vertical-align: middle;
     width: 25px;
     height: 25px;
-
+    margin-right: 10px;
+    vertical-align: middle;
+    align-items: center;
 }
+
+
+
+
+
+#other-option{
+    background-color: var(--b_color);
+    border: var(--border);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: bolder;
+}
+
 .error_field{
     color: var(--err_color);
     font-family: "Montserrat", sans-serif;
@@ -272,6 +292,8 @@ input[type="checkbox"] {
     margin-left: 50%;
 
 }
+
+
 #age_field_annotate{
     color: var(--t_color);
     margin-left: 10%;
