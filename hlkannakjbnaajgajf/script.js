@@ -92,8 +92,11 @@ function checkRegex(field, errId) {
                         }
                         fail_flag = 1;
                     }
-                    else if (checkRegex(field.id, errorElement.id)) {
+
+                    else if (  field.type !== 'date') {
+                        if(checkRegex(field.id, errorElement.id)){
                         fail_flag = 1;
+                        }
                     }
                 }
             }
