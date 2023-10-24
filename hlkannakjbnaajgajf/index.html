@@ -12,8 +12,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html">
-        <img src="images/logo.png" alt="Logo,ktore som sa rozhodol pouzit pre  tuto stranku o mne"  >
+        <img src="images/logo.png" alt="Logo of this website"  >
         </a>
     </div>
     </header>
@@ -72,7 +71,7 @@
 
     </div>
     <div class="right_form">
-        <label for="type">Choose a type of car:</label>
+        <label for="type">Choose a type of vehicle:</label>
         <select id="type" name="Types">
           <option value="family">Family/Commuter</option>
           <option value="sporty">Sporty</option>
@@ -80,7 +79,7 @@
         </select>
         <span class="error_field" id="type_err" ></span>
 
-        <label for="model">Choose a  model of car:</label>
+        <label for="model">Choose a  model of vehicle:</label>
         <select id="model" name="Models">
 
         </select>
@@ -92,11 +91,27 @@
         </select>
         <span class="error_field" id="plan_err" ></span>
 
+        <label for="option" id="box-label">Select a Special Service:</label><br>
 
+        <label for="adventure-box">Adventure Package</label>
+        <input type="checkbox" id="adventure-box" name="option" value="adventure">
+        <label for="honeymoon-box">Honeymoon Package</label>
+        <input type="checkbox" id="honeymoon-box" name="option" value="honeymoon">
+        <label for="business-box">Business Travel Package</label>
+        <input type="checkbox" id="business-box" name="option" value="business">
+
+        <label for="other-box">Other</label>
+        <input type="checkbox" id="other-box" name="option" value="other">
+
+        <div id="other-text">
+        <label for="other-option">Please specify:</label><br>
+        <textarea id="other-option" name="other-option" rows="4" cols="50"></textarea>
+        </div>
 
         <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
 
-    </div>
+         </div>
+
     </form>
 
 

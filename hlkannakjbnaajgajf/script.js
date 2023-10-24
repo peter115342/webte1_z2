@@ -48,7 +48,7 @@ function checkRegex(field, errId) {
     const currField = document.getElementById(field);
     const value = currField.value;
     let regex = /^[A-Za-z]+$/;
-
+    if(value.trim()){
     if (currField.type === 'email') {
         regex = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)*(\.[a-zA-Z]{2,})$/;
     } else if (currField.type === 'tel') {
@@ -66,6 +66,7 @@ function checkRegex(field, errId) {
         currField.style.borderWidth = "";
         return true;
     }
+}
 }
 
 
@@ -120,17 +121,17 @@ function checkRegex(field, errId) {
                 let dateOfBirth = new Date(event.target.value);
                 let today = new Date();
                 let age = today.getFullYear() - dateOfBirth.getFullYear();
-    
+
                 if (dateOfBirth > today) {
                     age = 0;
                 }
-    
+
                 let ageField = document.getElementById('age_field');
                 ageField.value = age;
             });
         }
     });
-    
+
 
 
 
@@ -228,5 +229,3 @@ function checkRegex(field, errId) {
 
     updateModels();
     updatePlans();
-
-

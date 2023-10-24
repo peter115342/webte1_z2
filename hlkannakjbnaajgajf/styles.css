@@ -7,6 +7,7 @@
     --highlight: 5px solid rgb(9, 137, 139);
     --b_color: rgb(216, 215, 215);
     --t_color :rgb(0, 70, 68);
+    --t_color-darker:rgb(0, 48, 46)8);
     --err_color : rgb(179, 6, 6);
     --place__color :rgb(95, 8, 8);
  }
@@ -87,6 +88,7 @@ header {
     margin: 0 auto;
     position: relative;
     padding: 15px;
+   
 }
 .logo img{
     height: 125px;
@@ -239,7 +241,27 @@ button{
 
 }
 
+label[for="adventure-box"],
+label[for="honeymoon-box"],
+label[for="business-box"],
+label[for="other-box"] {
+    font-weight: normal;
+    color: var(--t_color-darker);
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    vertical-align: middle;
 
+}
+input[type="checkbox"] {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+
+}
 .error_field{
     color: var(--err_color);
     font-family: "Montserrat", sans-serif;
