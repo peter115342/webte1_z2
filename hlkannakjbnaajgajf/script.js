@@ -1,14 +1,20 @@
 function fillEmail() {
-    var value = document.getElementById("first_value").value + " " + document.getElementById("last_value").value;
+    var value = document.getElementById("first_name").value + " " + document.getElementById("last_name").value;
     var email = document.getElementById("email_field").value;
 
-    document.getElementsByvalue("from")[0].value = email;
-    document.getElementsByvalue("sender")[0].value = value;
+    document.getElementsByValue("from")[0].value = email;
+    document.getElementsByValue("sender")[0].value = value;
 
 }
+
+const summary  = document.getElementById('summary');
   document.getElementById('main_form').onsubmit = function (e) {
     if (!checkFields()) {
         e.preventDefault();
+    }
+    else{
+        e.preventDefault();
+        summary.showModal();
     }
 };
 function showError(message,errId) {
@@ -91,7 +97,7 @@ function checkRegex(field, errId) {
                     }
 
                     else if (field.type !== 'date' ) {
-                        if(field.id !== "age_field" || field.id !== "price_field"){
+                        if(field.id !== "age_field" && field.id !== "price_field"){
                             if (!checkRegex(field.id, errorElement.id)) {
                             fail_flag = 1;
                         }
@@ -344,3 +350,23 @@ planSelect.addEventListener('change', calculateTotalPrice);
 typeSelect.addEventListener('change', calculateTotalPrice);
 
 calculateTotalPrice();
+
+
+
+const showName = document.getElementById('name_button');
+const hiddenTextField = document.getElementById('hiddenTextField');
+const first_name = document.getElementById('first_name');
+const last_name = document.getElementById('last_name');
+
+let isTextFieldVisible = true;
+
+showName.addEventListener('click', function() {
+    hiddenTextField.value = first_name.value + ' ' + last_name.value;
+    if (isTextFieldVisible) {
+        hiddenTextField.style.display = 'none';
+        isTextFieldVisible = false;
+    } else {
+        hiddenTextField.style.display = 'block';
+        isTextFieldVisible = true;
+    }
+});

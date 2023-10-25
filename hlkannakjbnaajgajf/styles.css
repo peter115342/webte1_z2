@@ -257,6 +257,14 @@ button{
 
 }
 
+#hiddenTextField{
+    display: none;
+}
+
+#name_button{
+    margin-top: 25px;
+}
+
 label[for="adventure-box"],
 label[for="honeymoon-box"],
 label[for="business-box"],

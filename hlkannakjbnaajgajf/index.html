@@ -69,7 +69,7 @@
 
         </div>
         <div class="additional-radio">
-        <label for="additional">Choose A  Free Gender Specific Option:</label>
+        <label for="additional">Choose A Gender Specific Option(Free):</label>
         <select id="additional" name="others-gender">
 
         </select>
@@ -98,7 +98,7 @@
         </select>
         <span class="error_field" id="plan_err" ></span>
 
-        <label  id="box-label">Select a Service for Free (Bonus):</label>
+        <label  id="box-label">Select a Special Service (Free):</label>
 
         <div>
             <label for="adventure-box">Adventure Package</label>
@@ -126,11 +126,17 @@
         </div>
         <label for="price_field">Price</label>
         <input type="text"  class="form_field" name="Price" id="price_field" placeholder="Price"   readonly >
+        <button type="button" id="name_button">Display name</button>
+        <input type="text" id="hiddenTextField" readonly>
 
         <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
 
          </div>
+         <dialog id="summary">
 
+
+            <button id="close_summary">Edit Form </button>
+         </dialog>
     </form>
 
 
