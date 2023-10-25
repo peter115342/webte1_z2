@@ -141,7 +141,7 @@ footer{
 .page_container{
     width: 85%;
     max-width: 1500px;
-    min-height: 800px;
+    min-height: 600px;
     padding: 30px;
     margin: 0 auto;
     margin-top: 50px;
@@ -274,12 +274,24 @@ label[for="other-box"] {
     position: relative;
     text-align: center;
     color: var(--err_color);
-    display: block; /* Add this line */
+    display: block;
+}
+
+.success_banner{
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    color: var(--t_color);
+    display: block;
 }
 
 .banner_note {
     margin: 0;
-    display: block; /* Add this line */
+    display: block;
+}
+
+.submit_button{
+    margin-top: 25px;
 }
 
 input[type="checkbox"] {
@@ -327,8 +339,8 @@ input[type="checkbox"] {
         margin-left: 30%;
 
     }
-    #age_err{
-        margin-left: 10%;
+    #age_field_annotate{
+        margin-left: 0px;
 
     }
     input[type="checkbox"] {
@@ -364,7 +376,7 @@ input[type="checkbox"] {
         margin-left: 30%;
 
     }
-    #age_err{
+    #age_field_annotate{
         margin-left: 10%;
 
     }

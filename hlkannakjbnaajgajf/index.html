@@ -13,7 +13,7 @@
     <header>
         <div class="logo">
         <img src="images/logo.png" alt="Logo of this website"  >
-        </a>
+        
     </div>
     </header>
     <h1 class="banner">
@@ -29,8 +29,8 @@
               <input type="hidden" name="sender" value="">
               <input type="hidden" name="to" value="pmuzslay8@gmail.com">
               <input type="hidden" name="subject" value="Test">
-              <input type="hidden" name="redirectOk" value="http://127.0.0.1:5500/hlkannakjbnaajgajf/index.html">
-              <input type="hidden" name="redirectFalse" value="https://www.google.com/">
+              <input type="hidden" name="redirectOk" value="https://webte1.fei.stuba.sk/~xmuzslay/hlkannakjbnaajgajf/submitSuccess">
+              <input type="hidden" name="redirectFalse" value="https://webte1.fei.stuba.sk/~xmuzslay/hlkannakjbnaajgajf/submitFail">
 
               <div class="left_form">
         <label for="first_name">First Name<span id="first_name_counter" class= "counter"> 0/25</span></label>
@@ -52,7 +52,7 @@
 
 
         <label for="birth_field">Date Of Birth</label>
-        <input type="date"  class="form_field"  name ="Date Of Birth" id="birth_field" placeholder="Date of Birth" required onblur="checkEmpty('birth_field','birth_field_err')">
+        <input type="date"  class="form_field"  name ="Date Of Birth" id="birth_field" required onblur="checkEmpty('birth_field','birth_field_err')">
         <span class="error_field"  id="birth_field_err"> </span>
 
 
@@ -61,7 +61,7 @@
         <span class="error_field"  id="age_field_annotate"> </span>
 
         <div class="gender_radio">
-        <legend>Choose your gender:</legend>
+        <label>Choose your gender:</label>
         <label for="male">Male</label>
         <input type="radio" name="gender" id="male" value="male" checked>
         <label for="female">Female</label>
@@ -69,7 +69,7 @@
 
         </div>
         <div class="additional-radio">
-        <label for="additional">Choose A Gender Specific Option:</label>
+        <label for="additional">Choose A  Free Gender Specific Option:</label>
         <select id="additional" name="others-gender">
 
         </select>
@@ -92,38 +92,40 @@
         </select>
         <span class="error_field" id="model_err" ></span>
 
-        <label for="model">What are your plans:</label>
+        <label for="plan">What are your plans:</label>
         <select id="plan" name="plans">
 
         </select>
         <span class="error_field" id="plan_err" ></span>
 
-        <label for="option" id="box-label">Select a Special Service:</label>
+        <label  id="box-label">Select a Service for Free (Bonus):</label>
 
         <div>
             <label for="adventure-box">Adventure Package</label>
             <input type="checkbox" id="adventure-box" name="options[]" value="adventure">
         </div>
-        
+
         <div>
             <label for="honeymoon-box">Honeymoon Package</label>
             <input type="checkbox" id="honeymoon-box" name="options[]" value="honeymoon">
         </div>
-        
+
         <div>
             <label for="business-box">Business Travel Package</label>
             <input type="checkbox" id="business-box" name="options[]" value="business">
         </div>
-        
+
         <div>
             <label for="other-box">Other</label>
             <input type="checkbox" id="other-box" name="options[]" value="other">
         </div>
-        
+
 
         <div id="other-text">
         <textarea id="other-option" name="other-option" rows="4" cols="50"></textarea>
         </div>
+        <label for="price_field">Price</label>
+        <input type="text"  class="form_field" name="Price" id="price_field" placeholder="Price"   readonly >
 
         <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
 

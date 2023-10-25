@@ -91,8 +91,8 @@ function checkRegex(field, errId) {
                     }
 
                     else if (field.type !== 'date' ) {
-                        if(field.id !== "age_field"){
-                        if ( checkRegex(field.id, errorElement.id)) {
+                        if(field.id !== "age_field" || field.id !== "price_field"){
+                            if (!checkRegex(field.id, errorElement.id)) {
                             fail_flag = 1;
                         }
                     }
@@ -187,10 +187,10 @@ function checkRegex(field, errId) {
         const selectedModel = modelSelect.value;
 
         if (selectedModel === "Boring Crossover") {
-            const planOptions = ["Daily Commute", "Grocery Shopping", "Short Roadtrip"];
+            const planOptions = ["Daily Commute", "Grocery Shopping", "Roadtrip"];
             addOptionsToSelect(planSelect, planOptions);
         } else if (selectedModel === "Massive Station Wagon") {
-            const planOptions = ["IKEA Haul", "Daily Commute", "Weekend Roadtrip"];
+            const planOptions = ["IKEA Haul", "Daily Commute", "Roadtrip"];
             addOptionsToSelect(planSelect, planOptions);
         } else if (selectedModel === "Luxury Limousine") {
             const planOptions = ["Important Business Meeting", "Long Motorway Journey", "Wedding"];
@@ -203,7 +203,7 @@ function checkRegex(field, errId) {
             const planOptions = ["Track Day", "Impress My Friends", "Go Very Fast and Crash"];
             addOptionsToSelect(planSelect, planOptions);
         } else if (selectedModel === "Fast Executive sedan") {
-            const planOptions = ["Late to Work Meeting", "Reckless Drifting", "Fun Roadtrip"];
+            const planOptions = ["Late to Work Meeting", "Reckless Drifting", "Roadtrip"];
             addOptionsToSelect(planSelect, planOptions);
         }
         else if (selectedModel === "Basic Pickup") {
@@ -213,7 +213,7 @@ function checkRegex(field, errId) {
             const planOptions = ["IKEA Haul", "Moving houses", "Saving The Planet"];
             addOptionsToSelect(planSelect, planOptions);
         } else if (selectedModel === "People Carrier") {
-            const planOptions = ["Family Roadtrip", "Taking Kids to Football", "Grocery Shopping"];
+            const planOptions = ["Roadtrip", "Daily Commute", "Grocery Shopping"];
             addOptionsToSelect(planSelect, planOptions);
         }
     }
@@ -285,3 +285,62 @@ function checkRegex(field, errId) {
         function navigateToPage() {
             window.location.href = 'index.html';
         }
+
+
+
+
+
+const price = document.getElementById('price_field');
+
+const carModelSelectPrice = {
+    "Boring Crossover": 75 ,
+    "Massive Station Wagon": 90,
+    "Luxury Limousine": 105,
+    "Light and Nimble" : 150,
+    "V10 Exotic": 180,
+    "Fast Executive sedan": 175,
+    "Basic Pickup": 85,
+    "Electric Van": 95,
+    "People Carrier" : 90,
+};
+
+const carPlanSelectPrice = {
+    "Daily Commute": 25,
+    "Grocery Shopping": 20,
+    "Roadtrip": 30,
+    "IKEA Haul": 35,
+    "Important Business Meeting": 30,
+    "Long Motorway Journey":35,
+    "Wedding": 40,
+    "Track Day": 70,
+    "Mountain Roads": 60,
+    "Just Having Fun":  55 ,
+    "Impress My Friends": 90,
+    "Go Very Fast and Crash": 2000,
+    "Late to Work Meeting": 60,
+    "Reckless Drifting": 75,
+    "Durability Test":80,
+    "Farm Work": 70,
+    "Off-Roading": 80,
+    "Moving houses":60,
+    "Saving The Planet":30,
+
+};
+
+function calculateTotalPrice() {
+    const modelSelectCurr = modelSelect.value;
+    const selectedPlanCurr = planSelect.value;
+
+    const modelPrice = carModelSelectPrice[modelSelectCurr];
+    const planPrice = carPlanSelectPrice[selectedPlanCurr];
+
+    const total = modelPrice + planPrice;
+    price.value= total;
+    price.textContent = total;
+}
+
+modelSelect.addEventListener('change', calculateTotalPrice);
+planSelect.addEventListener('change', calculateTotalPrice);
+typeSelect.addEventListener('change', calculateTotalPrice);
+
+calculateTotalPrice();
