@@ -293,6 +293,10 @@ input[type="checkbox"] {
 
 }
 
+.additional-radio{
+   
+}
+
 
 #age_field_annotate{
     color: var(--t_color);
@@ -339,5 +343,8 @@ input[type="checkbox"] {
     #age_err{
         margin-left: 10%;
 
+    }
+    .left_form{
+        margin-bottom: 25px;
     }
 }

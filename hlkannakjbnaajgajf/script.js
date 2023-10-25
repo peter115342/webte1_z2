@@ -8,11 +8,7 @@ function fillEmail() {
 }
   document.getElementById('main_form').onsubmit = function (e) {
     if (!checkFields()) {
-        console.log(" submit failed");
         e.preventDefault();
-    }
-    else{
-        console.log(" submit success");
     }
 };
 function showError(message,errId) {
@@ -50,7 +46,7 @@ function checkRegex(field, errId) {
     let regex = /^[A-Za-z]+$/;
     if(value.trim()){
     if (currField.type === 'email') {
-        regex = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)*(\.[a-zA-Z]{2,})$/;
+        regex = /^[\w-]{3,}(\.[\w-]+)*@[\w-]+(\.[\w-]+)*(\.[a-zA-Z]{2,})$/;
     } else if (currField.type === 'tel') {
         regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
     }
@@ -94,11 +90,15 @@ function checkRegex(field, errId) {
                         fail_flag = 1;
                     }
 
-                    else if (  field.type !== 'date') {
-                        if(checkRegex(field.id, errorElement.id)){
-                        fail_flag = 1;
+                    else if (field.type !== 'date' ) {
+                        if(field.id !== "age_field"){
+                        if ( checkRegex(field.id, errorElement.id)) {
+                            fail_flag = 1;
                         }
                     }
+                    }
+
+
                 }
             }
             console.log(fail_flag);
@@ -247,4 +247,33 @@ function checkRegex(field, errId) {
                 otherText.style.display = 'none';
                 otherText.value = '';
             }
+        });
+
+
+
+        const genderSelect = document.querySelector('input[name="gender"]:checked');
+        const additionalSelect = document.getElementById("additional");
+
+        const optionsByGender = {
+            male: ["Sport Package", "Rugged Work Package"],
+            female: ["Child Seat","Pet-friendly Package"],
+        };
+        function updateAdditionalOptions() {
+            const selectedGender = genderSelect.value;
+            const options = optionsByGender[selectedGender] || [];
+            console.log(selectedGender);
+            additionalSelect.innerHTML = "";
+
+            options.forEach((option) => {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.textContent = option;
+                additionalSelect.appendChild(optionElement);
+            });
+        }
+
+        updateAdditionalOptions();
+
+        document.querySelectorAll('input[name="gender"]').forEach((radio) => {
+            radio.addEventListener("change", updateAdditionalOptions);
         });
