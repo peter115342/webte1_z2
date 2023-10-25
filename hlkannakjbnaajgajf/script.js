@@ -9,19 +9,52 @@ function fillEmail() {
 
 const summary  = document.getElementById('summary');
 const closeSummary = document.getElementById('close_summary');
+const form = document.getElementById('main_form');
+function setFormResult(content) {
+    const resultContent = document.getElementById('summary_content');
+    resultContent.innerHTML = content;
+  }
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    let content = '<p><strong>Form Results:</strong></p>';
+    for (const [key, value] of formData) {
+        const field = form.querySelector(`[name="${key}"]`);
+        if (field && field.type !== 'hidden') {
+          if (!(field.tagName === 'TEXTAREA' && value.trim() === '')) {
+            content += `<p>${key}: ${value}</p>`;
+          }
+        }
+    }
+
+    setFormResult(content);
+
+});
+let submitConfirm  = false;
   document.getElementById('main_form').onsubmit = function (e) {
     if (!checkFields()) {
         e.preventDefault();
     }
+    else if(submitConfirm){
+        submitConfirm =false;
+        return true;
+    }
     else{
         e.preventDefault();
+        submitConfirm = true;
         summary.showModal();
     }
 };
 
-closeSummary.addEventListener('click', () => {
-    summary.close();
-});
+function closeModal() {
+    const dialog = summary
+    if (dialog) {
+      dialog.close();
+      submitConfirm = false;
+    }
+  }
+
+
 function showError(message,errId) {
     let err = document.getElementById(errId);
     err.style.visibility = "visible";
@@ -174,13 +207,13 @@ function checkRegex(field, errId) {
 
         const selectedType = typeSelect.value;
 
-        if (selectedType === "family") {
+        if (selectedType === "Family") {
             const modelOptions = ["Boring Crossover", "Massive Station Wagon", "Luxury Limousine"];
             addOptionsToSelect(modelSelect, modelOptions);
-        } else if (selectedType === "sporty") {
+        } else if (selectedType === "Sporty") {
             const modelOptions = ["Light and Nimble", "V10 Exotic", "Fast Executive sedan"];
             addOptionsToSelect(modelSelect, modelOptions);
-        } else if (selectedType === "utility") {
+        } else if (selectedType === "Utility") {
             const modelOptions = ["Basic Pickup", "Electric Van", "People Carrier"];
             addOptionsToSelect(modelSelect, modelOptions);
         }
@@ -270,7 +303,7 @@ function checkRegex(field, errId) {
         };
 
         function updateAdditionalOptions() {
-            const genderSelect = document.querySelector('input[name="gender"]:checked');
+            const genderSelect = document.querySelector('input[name="Gender"]:checked');
             const selectedGender = genderSelect.value;
             additionalSelect.innerHTML = "";
 
@@ -286,7 +319,7 @@ function checkRegex(field, errId) {
 
         updateAdditionalOptions();
 
-        document.querySelectorAll('input[name="gender"]').forEach((radio) => {
+        document.querySelectorAll('input[name="Gender"]').forEach((radio) => {
             radio.addEventListener("change", updateAdditionalOptions);
         });
 
@@ -364,10 +397,10 @@ const first_name = document.getElementById('first_name');
 const last_name = document.getElementById('last_name');
 
 let isTextFieldVisible = true;
-
+loadHiddenField();
 showName.addEventListener('click', function() {
-    hiddenTextField.value = first_name.value + ' ' + last_name.value;
-    if (isTextFieldVisible) {
+    loadHiddenField();
+        if (isTextFieldVisible) {
         hiddenTextField.style.display = 'none';
         isTextFieldVisible = false;
     } else {
@@ -375,10 +408,12 @@ showName.addEventListener('click', function() {
         isTextFieldVisible = true;
     }
 });
-
-first_name.addEventListener('change',function() {
+function loadHiddenField(){
     hiddenTextField.value = first_name.value + ' ' + last_name.value;
+}
+first_name.addEventListener('change',function() {
+loadHiddenField();
 });
 last_name.addEventListener('change',function() {
-    hiddenTextField.value = first_name.value + ' ' + last_name.value;
+    loadHiddenField();
 });

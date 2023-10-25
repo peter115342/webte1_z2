@@ -63,9 +63,9 @@
         <div class="gender_radio">
         <label>Choose your gender:</label>
         <label for="male">Male</label>
-        <input type="radio" name="gender" id="male" value="male" checked>
+        <input type="radio" name="Gender" id="male" value="male" checked>
         <label for="female">Female</label>
-        <input type="radio" name="gender" id="female" value="female">
+        <input type="radio" name="Gender" id="female" value="female">
 
         </div>
         <div class="additional-radio">
@@ -79,21 +79,21 @@
     </div>
     <div class="right_form">
         <label for="type">Choose a type of vehicle:</label>
-        <select id="type" name="Types">
-          <option value="family">Family/Commuter</option>
-          <option value="sporty">Sporty</option>
-          <option value="utility">Utility</option>
+        <select id="type" name="Type">
+          <option value="Family">Family/Commuter</option>
+          <option value="Sporty">Sporty</option>
+          <option value="Utility">Utility</option>
         </select>
         <span class="error_field" id="type_err" ></span>
 
         <label for="model">Choose a  model of vehicle:</label>
-        <select id="model" name="Models">
+        <select id="model" name="Model">
 
         </select>
         <span class="error_field" id="model_err" ></span>
 
         <label for="plan">What are your plans:</label>
-        <select id="plan" name="plans">
+        <select id="plan" name="Plan">
 
         </select>
         <span class="error_field" id="plan_err" ></span>
@@ -102,27 +102,27 @@
 
         <div>
             <label for="adventure-box">Adventure Package</label>
-            <input type="checkbox" id="adventure-box" name="options[]" value="adventure">
+            <input type="checkbox" id="adventure-box" name="Option 1" value="Adventure">
         </div>
 
         <div>
             <label for="honeymoon-box">Honeymoon Package</label>
-            <input type="checkbox" id="honeymoon-box" name="options[]" value="honeymoon">
+            <input type="checkbox" id="honeymoon-box" name="Option 2" value="Honeymoon">
         </div>
 
         <div>
             <label for="business-box">Business Travel Package</label>
-            <input type="checkbox" id="business-box" name="options[]" value="business">
+            <input type="checkbox" id="business-box" name="Option 3" value="Business">
         </div>
 
         <div>
             <label for="other-box">Other</label>
-            <input type="checkbox" id="other-box" name="options[]" value="other">
+            <input type="checkbox" id="other-box" name="Other Option" value="Other">
         </div>
 
 
         <div id="other-text">
-        <textarea id="other-option" name="other-option" rows="4" cols="50"></textarea>
+        <textarea id="other-option" name="Other Option Description" rows="4" cols="50"></textarea>
         </div>
         <label for="price_field">Price</label>
         <input type="text"  class="form_field" name="Price" id="price_field" placeholder="Price"   readonly >
@@ -133,9 +133,12 @@
 
          </div>
          <dialog id="summary">
+            <h2>Form Summary</h2>
+            <div id="summary_content">
 
-
-            <button id="close_summary">Edit Form </button>
+              </div>
+              <button type="submit"  class="submit_button"   id = "sub_button">SUBMIT</button>
+            <button type="button" id="close_summary" onclick="closeModal()">Edit Form </button>
          </dialog>
     </form>
 
