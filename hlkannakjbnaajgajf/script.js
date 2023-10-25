@@ -251,18 +251,19 @@ function checkRegex(field, errId) {
 
 
 
-        const genderSelect = document.querySelector('input[name="gender"]:checked');
         const additionalSelect = document.getElementById("additional");
 
         const optionsByGender = {
             male: ["Sport Package", "Rugged Work Package"],
-            female: ["Child Seat","Pet-friendly Package"],
+            female: ["Child Seat", "Pet-friendly Package"],
         };
+
         function updateAdditionalOptions() {
+            const genderSelect = document.querySelector('input[name="gender"]:checked');
             const selectedGender = genderSelect.value;
-            const options = optionsByGender[selectedGender] || [];
-            console.log(selectedGender);
             additionalSelect.innerHTML = "";
+
+            const options = optionsByGender[selectedGender] || [];
 
             options.forEach((option) => {
                 const optionElement = document.createElement("option");
