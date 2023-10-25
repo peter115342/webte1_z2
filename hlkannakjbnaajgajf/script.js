@@ -278,3 +278,10 @@ function checkRegex(field, errId) {
         document.querySelectorAll('input[name="gender"]').forEach((radio) => {
             radio.addEventListener("change", updateAdditionalOptions);
         });
+
+
+
+
+        function navigateToPage() {
+            window.location.href = 'index.html';
+        }

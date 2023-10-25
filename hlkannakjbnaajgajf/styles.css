@@ -138,6 +138,22 @@ footer{
     position: relative;
     padding: 20px;
 }
+.page_container{
+    width: 85%;
+    max-width: 1500px;
+    min-height: 800px;
+    padding: 30px;
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+    border: var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-border);
+}
+
+.page_button{
+    margin-top: 25%;
+}
 
 .banner{
     font-weight: bolder;
@@ -253,6 +269,19 @@ label[for="other-box"] {
     margin-left: 15%;
 }
 
+.fail_banner {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    color: var(--err_color);
+    display: block; /* Add this line */
+}
+
+.banner_note {
+    margin: 0;
+    display: block; /* Add this line */
+}
+
 input[type="checkbox"] {
     display: inline-block;
     padding: 0;
@@ -262,11 +291,6 @@ input[type="checkbox"] {
     vertical-align: middle;
     align-items: center;
 }
-
-
-
-
-
 #other-option{
     background-color: var(--b_color);
     border: var(--border);
@@ -293,10 +317,6 @@ input[type="checkbox"] {
 
 }
 
-.additional-radio{
-   
-}
-
 
 #age_field_annotate{
     color: var(--t_color);
@@ -312,7 +332,7 @@ input[type="checkbox"] {
 
     }
  }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
     body{
         min-height: 1250px;
     }
