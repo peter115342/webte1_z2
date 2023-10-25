@@ -8,6 +8,7 @@ function fillEmail() {
 }
 
 const summary  = document.getElementById('summary');
+const closeSummary = document.getElementById('close_summary');
   document.getElementById('main_form').onsubmit = function (e) {
     if (!checkFields()) {
         e.preventDefault();
@@ -17,6 +18,10 @@ const summary  = document.getElementById('summary');
         summary.showModal();
     }
 };
+
+closeSummary.addEventListener('click', () => {
+    summary.close();
+});
 function showError(message,errId) {
     let err = document.getElementById(errId);
     err.style.visibility = "visible";
@@ -87,7 +92,7 @@ function checkRegex(field, errId) {
                 const field = form.elements[i];
                 if (field.type === 'text' || field.type === 'email' || field.type === 'date' || field.type === 'tel') {
                     const errorElement = document.getElementById(field.id + "_err");
-                    if (!field.value.trim()) {
+                    if (!field.value.trim() && field.id !== "hiddenTextField") {
                         if (errorElement) {
                             showError("This is a required field!", errorElement.id);
                             field.style.borderColor = "rgb(179, 6, 6)";
@@ -97,7 +102,7 @@ function checkRegex(field, errId) {
                     }
 
                     else if (field.type !== 'date' ) {
-                        if(field.id !== "age_field" && field.id !== "price_field"){
+                        if(field.id !== "age_field" && field.id !== "price_field" && field.id !== "hiddenTextField"){
                             if (!checkRegex(field.id, errorElement.id)) {
                             fail_flag = 1;
                         }
@@ -369,4 +374,11 @@ showName.addEventListener('click', function() {
         hiddenTextField.style.display = 'block';
         isTextFieldVisible = true;
     }
+});
+
+first_name.addEventListener('change',function() {
+    hiddenTextField.value = first_name.value + ' ' + last_name.value;
+});
+last_name.addEventListener('change',function() {
+    hiddenTextField.value = first_name.value + ' ' + last_name.value;
 });
