@@ -392,3 +392,15 @@ input[type="checkbox"] {
         margin-bottom: 25px;
     }
 }
+
+
+.foot_text{
+    color: var(--b_color);
+    position: relative;
+    margin: 0 auto;
+    width: fit-content;
+
+}
+.foot_copy{
+    height: fit-content;
+}

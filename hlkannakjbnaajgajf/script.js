@@ -14,7 +14,10 @@ function setFormResult(content) {
     const resultContent = document.getElementById('summary_content');
     resultContent.innerHTML = content;
   }
+  let submitConfirm  = false;
+
   form.addEventListener('submit', (event) => {
+    if(!submitConfirm){
     event.preventDefault();
     const formData = new FormData(form);
     let content = '<p><strong>Form Results:</strong></p>';
@@ -26,22 +29,19 @@ function setFormResult(content) {
           }
         }
     }
-
+    submitConfirm = true;
     setFormResult(content);
-
+    }
 });
-let submitConfirm  = false;
   document.getElementById('main_form').onsubmit = function (e) {
     if (!checkFields()) {
         e.preventDefault();
     }
     else if(submitConfirm){
-        submitConfirm =false;
         return true;
     }
     else{
         e.preventDefault();
-        submitConfirm = true;
         summary.showModal();
     }
 };
